@@ -13,17 +13,14 @@ use yii\grid\GridView;
 $this->title = 'Orden de Trabajo';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="cabecera-orden-trabajo-index card shadow">
+<div class="cabecera-orden-trabajo-index card shadow" style="overflow-x: scroll;">
 
     <div class="card-header">
         <b><u><?= Html::encode($this->title) ?></u></b>
     </div>
     <div class="card-body">
-
-
-
         <p>
-            <?= Html::a('Create Cabecera Orden Trabajo', ['create'], ['class' => 'btn btn-success']) ?>
+            <?= Html::a('<i class="fa-solid fa-file-plus-minus"> Crear OT</i>', ['create'], ['class' => 'btn btn-success']) ?>
         </p>
 
         <?php // echo $this->render('_search', ['model' => $searchModel]); 

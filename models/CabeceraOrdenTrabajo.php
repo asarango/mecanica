@@ -43,11 +43,11 @@ class CabeceraOrdenTrabajo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['fecha_ingreso', 'fecha_entrega', 'idTipoOrden', 'idVehiculo', 'idAsesor', 'kilometraje', 'esAbierta', 'numero_orden', 'fecha_terminacion_trabajo'], 'required'],
+            [['fecha_ingreso', 'idTipoOrden', 'idVehiculo', 'idAsesor', 'kilometraje', 'esAbierta'], 'required'],
             [['fecha_ingreso', 'fecha_entrega', 'fecha_terminacion_trabajo'], 'safe'],
             [['idTipoOrden', 'idVehiculo', 'idAsesor', 'kilometraje', 'numero_orden', 'calificacion'], 'default', 'value' => null],
             [['idTipoOrden', 'idVehiculo', 'idAsesor', 'kilometraje', 'numero_orden', 'calificacion'], 'integer'],
-            [['fotoIngresoVehiculo', 'fotoSalidaVehiculo'], 'string'],
+            [['fotoIngresoVehiculo', 'fotoSalidaVehiculo','indicaCliente','diagnostico'], 'string'],
             [['esAbierta'], 'boolean'],
             [['idAsesor'], 'exist', 'skipOnError' => true, 'targetClass' => Asesor::className(), 'targetAttribute' => ['idAsesor' => 'id']],
             [['idTipoOrden'], 'exist', 'skipOnError' => true, 'targetClass' => TipoOrden::className(), 'targetAttribute' => ['idTipoOrden' => 'id']],
@@ -74,6 +74,8 @@ class CabeceraOrdenTrabajo extends \yii\db\ActiveRecord
             'numero_orden' => 'Numero Orden',
             'fecha_terminacion_trabajo' => 'Fecha Terminacion Trabajo',
             'calificacion' => 'Calificacion',
+            'indicaCliente' => 'Indica Cliente',
+            'diagnostico' => 'Diagnóstico',
         ];
     }
 

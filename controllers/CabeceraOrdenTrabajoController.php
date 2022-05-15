@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\CabeceraOrdenTrabajo;
 use app\models\CabeceraOrdenTrabajoSearch;
+use Exception;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -70,8 +71,16 @@ class CabeceraOrdenTrabajoController extends Controller
         $model = new CabeceraOrdenTrabajo();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+            if ($model->load($this->request->post())) {
+
+                try{
+                    $model->save();
+                }catch(Exception $ex){
+                    print_r($ex->getMessage());
+                    die();
+                }
+
+                return $this->redirect(['/detalle-orden-trabajo/index', 'id' => $model->id]);
             }
         } else {
             $model->loadDefaultValues();
@@ -94,7 +103,7 @@ class CabeceraOrdenTrabajoController extends Controller
         $model = $this->findModel($id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['update', 'id' => $model->id]);
         }
 
         return $this->render('update', [

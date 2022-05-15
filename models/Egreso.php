@@ -44,7 +44,6 @@ class Egreso extends \yii\db\ActiveRecord
             [['fecha_egreso', 'fecha_creacion'], 'safe'],
             [['subtotal', 'porc_iva', 'val_iva', 'porc_descuento', 'val_descuento'], 'number'],
             [['creado_por'], 'string', 'max' => 10],
-            [['observacion'], 'string', 'max' => 255],
         ];
     }
 

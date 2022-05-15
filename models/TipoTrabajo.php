@@ -28,7 +28,9 @@ class TipoTrabajo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['nombre','precio'],'required'],
             [['nombre'], 'string', 'max' => 50],
+            [['precio'], 'number'],
         ];
     }
 

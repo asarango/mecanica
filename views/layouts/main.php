@@ -43,10 +43,15 @@ AppAsset::register($this);
 
                     !Yii::$app->user->isGuest ? (
                         [
-                            'label' => 'Orden de trabajo',
+                            'label' => 'Principal',
                             'items' => [
-                                 ['label' => 'Crear Orden', 'url' => ['/cabecera-orden-trabajo/index']],
-                                 ['label' => 'Egreso de Bodega', 'url' => '#'],
+                                 ['label' => 'Inventarios', 'url' => ['/inventarios/index']],
+                                 ['label' => 'Orden de Trabajo', 'url' => ['/cabecera-orden-trabajo/index']],
+                                 ['label' => 'Egreso Bodega', 'url' => ['/egreso/index']],
+                                 ['label' => 'Ingreso Bodega', 'url' => ['#']],
+                                 ['label' => 'Clientes', 'url' => ['#']],                                 
+                                 ['label' => 'Mecánicos', 'url' => ['#']],
+                                 ['label' => 'Vehículo', 'url' => ['#']],
                             ],
                         ]  
                     ): '',

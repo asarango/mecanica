@@ -48,6 +48,15 @@ return array (
       '@yii/faker' => $vendorDir . '/yiisoft/yii2-faker/src',
     ),
   ),
+  'yiisoft/yii2-bootstrap' => 
+  array (
+    'name' => 'yiisoft/yii2-bootstrap',
+    'version' => '2.0.11.0',
+    'alias' => 
+    array (
+      '@yii/bootstrap' => $vendorDir . '/yiisoft/yii2-bootstrap/src',
+    ),
+  ),
   'kartik-v/yii2-krajee-base' => 
   array (
     'name' => 'kartik-v/yii2-krajee-base',
@@ -120,15 +129,6 @@ return array (
       '@kartik/bs4dropdown' => $vendorDir . '/kartik-v/yii2-bootstrap4-dropdown/src',
     ),
   ),
-  'yiisoft/yii2-bootstrap' => 
-  array (
-    'name' => 'yiisoft/yii2-bootstrap',
-    'version' => '2.0.11.0',
-    'alias' => 
-    array (
-      '@yii/bootstrap' => $vendorDir . '/yiisoft/yii2-bootstrap/src',
-    ),
-  ),
   'johnitvn/yii2-ajaxcrud' => 
   array (
     'name' => 'johnitvn/yii2-ajaxcrud',
@@ -138,5 +138,32 @@ return array (
       '@johnitvn/ajaxcrud' => $vendorDir . '/johnitvn/yii2-ajaxcrud/src',
     ),
     'bootstrap' => 'johnitvn\\ajaxcrud\\Bootstrap',
+  ),
+  'yiisoft/yii2-jui' => 
+  array (
+    'name' => 'yiisoft/yii2-jui',
+    'version' => '2.0.7.0',
+    'alias' => 
+    array (
+      '@yii/jui' => $vendorDir . '/yiisoft/yii2-jui',
+    ),
+  ),
+  'badrutdinovrr/yii2-jui-datepicker' => 
+  array (
+    'name' => 'badrutdinovrr/yii2-jui-datepicker',
+    'version' => '2.0.0.0',
+    'alias' => 
+    array (
+      '@yii/jui/datepicker' => $vendorDir . '/badrutdinovrr/yii2-jui-datepicker',
+    ),
+  ),
+  'kartik-v/yii2-widget-select2' => 
+  array (
+    'name' => 'kartik-v/yii2-widget-select2',
+    'version' => '2.2.3.0',
+    'alias' => 
+    array (
+      '@kartik/select2' => $vendorDir . '/kartik-v/yii2-widget-select2/src',
+    ),
   ),
 );

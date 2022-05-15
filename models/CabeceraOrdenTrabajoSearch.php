@@ -18,7 +18,7 @@ class CabeceraOrdenTrabajoSearch extends CabeceraOrdenTrabajo
     {
         return [
             [['id', 'idTipoOrden', 'idVehiculo', 'idAsesor', 'kilometraje', 'numero_orden', 'calificacion'], 'integer'],
-            [['fecha_ingreso', 'fecha_entrega', 'fotoIngresoVehiculo', 'fotoSalidaVehiculo', 'fecha_terminacion_trabajo'], 'safe'],
+            [['fecha_ingreso', 'fecha_entrega', 'fotoIngresoVehiculo', 'fotoSalidaVehiculo', 'fecha_terminacion_trabajo','indicaCliente','diagnostico'], 'safe'],
             [['esAbierta'], 'boolean'],
         ];
     }
@@ -73,7 +73,9 @@ class CabeceraOrdenTrabajoSearch extends CabeceraOrdenTrabajo
         ]);
 
         $query->andFilterWhere(['ilike', 'fotoIngresoVehiculo', $this->fotoIngresoVehiculo])
-            ->andFilterWhere(['ilike', 'fotoSalidaVehiculo', $this->fotoSalidaVehiculo]);
+            ->andFilterWhere(['ilike', 'fotoSalidaVehiculo', $this->fotoSalidaVehiculo])
+            ->andFilterWhere(['ilike', 'indicaCliente', $this->fotoSalidaVehiculo])
+            ->andFilterWhere(['ilike', 'diagnostico', $this->fotoSalidaVehiculo]);
 
         return $dataProvider;
     }
