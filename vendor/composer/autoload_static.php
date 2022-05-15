@@ -30,6 +30,8 @@ class ComposerStaticInitf55f64c2f6a91ffcad87cc6306a8c1ae
         'y' => 
         array (
             'yii\\swiftmailer\\' => 16,
+            'yii\\jui\\datepicker\\' => 19,
+            'yii\\jui\\' => 8,
             'yii\\gii\\' => 8,
             'yii\\faker\\' => 10,
             'yii\\debug\\' => 10,
@@ -48,6 +50,7 @@ class ComposerStaticInitf55f64c2f6a91ffcad87cc6306a8c1ae
         ),
         'k' => 
         array (
+            'kartik\\select2\\' => 15,
             'kartik\\popover\\' => 15,
             'kartik\\plugins\\popover\\' => 23,
             'kartik\\mpdf\\' => 12,
@@ -139,6 +142,14 @@ class ComposerStaticInitf55f64c2f6a91ffcad87cc6306a8c1ae
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2-swiftmailer/src',
         ),
+        'yii\\jui\\datepicker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/badrutdinovrr/yii2-jui-datepicker',
+        ),
+        'yii\\jui\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-jui',
+        ),
         'yii\\gii\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2-gii/src',
@@ -176,6 +187,10 @@ class ComposerStaticInitf55f64c2f6a91ffcad87cc6306a8c1ae
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
+        'kartik\\select2\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-select2/src',
         ),
         'kartik\\popover\\' => 
         array (

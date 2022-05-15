@@ -1,5 +1,67 @@
 [
     {
+        "name": "badrutdinovrr/yii2-jui-datepicker",
+        "version": "2.0",
+        "version_normalized": "2.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/badrutdinovrr/yii2-jui-datepicker.git",
+            "reference": "49ed626df66fea8e3dfd83bb19a934872f7d9e39"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/badrutdinovrr/yii2-jui-datepicker/zipball/49ed626df66fea8e3dfd83bb19a934872f7d9e39",
+            "reference": "49ed626df66fea8e3dfd83bb19a934872f7d9e39",
+            "shasum": ""
+        },
+        "require": {
+            "bower-asset/jquery-ui": "1.*",
+            "yiisoft/yii2": ">=2.0.4",
+            "yiisoft/yii2-jui": "2.*"
+        },
+        "require-dev": {
+            "ivan-chkv/yii2-phpunit": "2.*"
+        },
+        "time": "2018-07-30T09:45:20+00:00",
+        "type": "yii2-extension",
+        "extra": {
+            "asset-installer-paths": {
+                "npm-asset-library": "vendor/npm",
+                "bower-asset-library": "vendor/bower"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "yii\\jui\\datepicker\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Ivan Chistyakov",
+                "email": "ivan.chkv@gmail.com"
+            },
+            {
+                "name": "Rustam Badrutdinov",
+                "email": "delightalmighty@gmail.com"
+            }
+        ],
+        "description": "Yii 2 jQuery UI DatePicker Widget",
+        "homepage": "http://jqueryui.com/datepicker/",
+        "keywords": [
+            "date",
+            "datepicker",
+            "jquery",
+            "jquery-ui",
+            "picker",
+            "yii2"
+        ]
+    },
+    {
         "name": "behat/gherkin",
         "version": "v4.9.0",
         "version_normalized": "4.9.0.0",
@@ -122,6 +184,30 @@
             "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/e786e3d9707ffd9b0dd330ca135b66344dcef85a",
             "reference": "e786e3d9707ffd9b0dd330ca135b66344dcef85a",
             "shasum": null
+        },
+        "type": "bower-asset",
+        "installation-source": "dist",
+        "license": [
+            "MIT"
+        ]
+    },
+    {
+        "name": "bower-asset/jquery-ui",
+        "version": "1.12.1",
+        "version_normalized": "1.12.1.0",
+        "source": {
+            "type": "git",
+            "url": "git@github.com:components/jqueryui.git",
+            "reference": "44ecf3794cc56b65954cc19737234a3119d036cc"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/components/jqueryui/zipball/44ecf3794cc56b65954cc19737234a3119d036cc",
+            "reference": "44ecf3794cc56b65954cc19737234a3119d036cc",
+            "shasum": null
+        },
+        "require": {
+            "bower-asset/jquery": ">=1.6"
         },
         "type": "bower-asset",
         "installation-source": "dist",
@@ -1688,6 +1774,62 @@
             "extension",
             "field",
             "form",
+            "widget",
+            "yii2"
+        ]
+    },
+    {
+        "name": "kartik-v/yii2-widget-select2",
+        "version": "v2.2.3",
+        "version_normalized": "2.2.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kartik-v/yii2-widget-select2.git",
+            "reference": "25fbe4b93b8acbac325fa4f594a983be1e84a780"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/kartik-v/yii2-widget-select2/zipball/25fbe4b93b8acbac325fa4f594a983be1e84a780",
+            "reference": "25fbe4b93b8acbac325fa4f594a983be1e84a780",
+            "shasum": ""
+        },
+        "require": {
+            "kartik-v/yii2-krajee-base": ">=3.0.4",
+            "select2/select2": ">=4.0"
+        },
+        "time": "2022-03-04T10:11:54+00:00",
+        "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.2.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "kartik\\select2\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Kartik Visweswaran",
+                "email": "kartikv2@gmail.com",
+                "homepage": "http://www.krajee.com/"
+            }
+        ],
+        "description": "Enhanced Yii2 wrapper for the Select2 jQuery plugin (sub repo split from yii2-widgets).",
+        "homepage": "https://github.com/kartik-v/yii2-widget-select2",
+        "keywords": [
+            "dropdown",
+            "extension",
+            "form",
+            "jquery",
+            "plugin",
+            "select2",
             "widget",
             "yii2"
         ]
@@ -3569,6 +3711,46 @@
         ],
         "description": "Library that helps with managing the version number of Git-hosted PHP projects",
         "homepage": "https://github.com/sebastianbergmann/version"
+    },
+    {
+        "name": "select2/select2",
+        "version": "4.0.13",
+        "version_normalized": "4.0.13.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/select2/select2.git",
+            "reference": "45f2b83ceed5231afa7b3d5b12b58ad335edd82e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/select2/select2/zipball/45f2b83ceed5231afa7b3d5b12b58ad335edd82e",
+            "reference": "45f2b83ceed5231afa7b3d5b12b58ad335edd82e",
+            "shasum": ""
+        },
+        "time": "2020-01-28T05:01:22+00:00",
+        "type": "component",
+        "extra": {
+            "component": {
+                "scripts": [
+                    "dist/js/select2.js"
+                ],
+                "styles": [
+                    "dist/css/select2.css"
+                ],
+                "files": [
+                    "dist/js/select2.js",
+                    "dist/js/i18n/*.js",
+                    "dist/css/select2.css"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Select2 is a jQuery based replacement for select boxes.",
+        "homepage": "https://select2.org/"
     },
     {
         "name": "setasign/fpdi",
@@ -5596,6 +5778,54 @@
         "keywords": [
             "code generator",
             "gii",
+            "yii2"
+        ]
+    },
+    {
+        "name": "yiisoft/yii2-jui",
+        "version": "2.0.7",
+        "version_normalized": "2.0.7.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/yiisoft/yii2-jui.git",
+            "reference": "ce45c16d4fbbe7d1c516d8d0e8311e07f6138eed"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/yiisoft/yii2-jui/zipball/ce45c16d4fbbe7d1c516d8d0e8311e07f6138eed",
+            "reference": "ce45c16d4fbbe7d1c516d8d0e8311e07f6138eed",
+            "shasum": ""
+        },
+        "require": {
+            "bower-asset/jquery-ui": "~1.12.1",
+            "yiisoft/yii2": "~2.0.4"
+        },
+        "time": "2017-11-25T15:32:29+00:00",
+        "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "yii\\jui\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Qiang Xue",
+                "email": "qiang.xue@gmail.com"
+            }
+        ],
+        "description": "The Jquery UI extension for the Yii framework",
+        "keywords": [
+            "jQuery UI",
             "yii2"
         ]
     },
