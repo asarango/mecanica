@@ -1,0 +1,42 @@
+.card-color-fuccia{
+    background-color: #20c997;;
+    color: #eee;
+    margin-right: 5px;
+    padding: 10px;
+    border-radius: 5px 5px 5px 5px;
+    /* box-shadow: 20px 20px 20px  black; */
+}
+
+.card-color-azul{
+    background-color: #191a6c;
+    color: #eee;
+    margin-right: 5px;
+    padding: 10px;
+    border-radius: 5px 5px 5px 5px;
+    overflow-y: scroll;
+    height: 250px;
+    /* box-shadow: 20px 20px 20px  black; */
+}
+
+.card-dark{
+    background-color: #343a40;
+    color: #eee;
+    margin-right: 5px;
+    padding: 10px;
+    border-radius: 5px 5px 5px 5px;
+    /* box-shadow: 20px 20px 20px  black; */
+}
+
+.cuadro-menu{
+    overflow-x: hidden;
+    overflow-y: show;
+}
+
+.zoom {
+    transition: transform .2s; /* Animation */
+    margin: 0 auto;
+  }
+  
+  .zoom:hover {
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }

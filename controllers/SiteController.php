@@ -80,7 +80,8 @@ class SiteController extends Controller
 
             // print_r($model->login());
             // die();
-            return $this->goBack();
+            //return $this->goBack();
+            return $this->redirect(['men-menu/index']);
         }
 
         $model->password = '';
@@ -88,6 +89,8 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+
+    
 
     /**
      * Logout action.
