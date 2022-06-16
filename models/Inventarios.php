@@ -34,8 +34,8 @@ class Inventarios extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['codigo', 'nombre', 'precos', 'preven', 'porc_aut_venta'], 'required'],
-            [['precos', 'preven', 'porc_aut_venta'], 'number'],
+            [['codigo', 'nombre', 'precos', 'preven', 'porc_aut_venta','tiene_iva','id_area'], 'required'],
+            [['precos', 'preven', 'porc_aut_venta','tiene_iva','id_area'], 'number'],
             [['codigo'], 'string', 'max' => 30],
             [['nombre'], 'string', 'max' => 100],
         ];
@@ -48,11 +48,13 @@ class Inventarios extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'codigo' => 'Codigo',
+            'codigo' => 'Código',
             'nombre' => 'Nombre',
-            'precos' => 'Precos',
-            'preven' => 'Preven',
-            'porc_aut_venta' => 'Porc Aut Venta',
+            'precos' => 'Precio Costo',
+            'preven' => 'Precio Venta',
+            'porc_aut_venta' => 'Porcentaje Aumentado',
+            'tiene_iva' => 'Tiene IVA',
+            'id_area' => 'Area',
         ];
     }
 

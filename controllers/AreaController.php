@@ -2,17 +2,16 @@
 
 namespace app\controllers;
 
-use app\models\Inventarios;
 use app\models\Area;
-use app\models\InventariosSearch;
+use app\models\AreaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * InventariosController implements the CRUD actions for Inventarios model.
+ * AreaController implements the CRUD actions for Area model.
  */
-class InventariosController extends Controller
+class AreaController extends Controller
 {
     /**
      * @inheritDoc
@@ -33,13 +32,13 @@ class InventariosController extends Controller
     }
 
     /**
-     * Lists all Inventarios models.
+     * Lists all Area models.
      *
      * @return string
      */
     public function actionIndex()
     {
-        $searchModel = new InventariosSearch();
+        $searchModel = new AreaSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -49,7 +48,7 @@ class InventariosController extends Controller
     }
 
     /**
-     * Displays a single Inventarios model.
+     * Displays a single Area model.
      * @param int $id ID
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
@@ -62,15 +61,13 @@ class InventariosController extends Controller
     }
 
     /**
-     * Creates a new Inventarios model.
+     * Creates a new Area model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
-        $model = new Inventarios();      
-        $arrayTieneIva = [ 0 => 'NO', 1 => 'SI'];  
-        $modelAreas = \yii\helpers\ArrayHelper::map(Area::find()->all(), 'id', 'nombre_area');   
+        $model = new Area();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
@@ -82,13 +79,11 @@ class InventariosController extends Controller
 
         return $this->render('create', [
             'model' => $model,
-            'modelAreas'=>$modelAreas,
-            'arrayTieneIva'=>$arrayTieneIva,
         ]);
     }
 
     /**
-     * Updates an existing Inventarios model.
+     * Updates an existing Area model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param int $id ID
      * @return string|\yii\web\Response
@@ -97,8 +92,6 @@ class InventariosController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        $arrayTieneIva = [ 0 => 'NO', 1 => 'SI'];  
-        $modelAreas = \yii\helpers\ArrayHelper::map(Area::find()->all(), 'id', 'nombre_area'); 
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -106,13 +99,11 @@ class InventariosController extends Controller
 
         return $this->render('update', [
             'model' => $model,
-            'modelAreas'=>$modelAreas,
-            'arrayTieneIva'=>$arrayTieneIva,
         ]);
     }
 
     /**
-     * Deletes an existing Inventarios model.
+     * Deletes an existing Area model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param int $id ID
      * @return \yii\web\Response
@@ -121,19 +112,20 @@ class InventariosController extends Controller
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
+
         return $this->redirect(['index']);
     }
 
     /**
-     * Finds the Inventarios model based on its primary key value.
+     * Finds the Area model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param int $id ID
-     * @return Inventarios the loaded model
+     * @return Area the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Inventarios::findOne(['id' => $id])) !== null) {
+        if (($model = Area::findOne(['id' => $id])) !== null) {
             return $model;
         }
 
