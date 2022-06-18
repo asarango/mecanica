@@ -4,12 +4,12 @@ namespace app\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Egreso;
+use app\models\DetalleIngreso;
 
 /**
- * EgresoSearch represents the model behind the search form of `app\models\Egreso`.
+ * DetalleIngresoSearch represents the model behind the search form of `app\models\DetalleIngreso`.
  */
-class EgresoSearch extends Egreso
+class DetalleIngresoSearch extends DetalleIngreso
 {
     /**
      * {@inheritdoc}
@@ -17,9 +17,9 @@ class EgresoSearch extends Egreso
     public function rules()
     {
         return [
-            [['id'], 'integer'],
-            [['fecha_egreso', 'creado_por', 'fecha_creacion', 'observacion', 'estado', 'obs_estado'], 'safe'],
-            [['subtotal', 'porc_iva', 'val_iva', 'porc_descuento', 'val_descuento'], 'number'],
+            [['id', 'idIngreso', 'idInventario'], 'integer'],
+            [['nombreItem'], 'safe'],
+            [['cantidad', 'precio', 'porc_iva', 'iva', 'porc_descuento', 'descuento', 'total'], 'number'],
         ];
     }
 
@@ -41,7 +41,7 @@ class EgresoSearch extends Egreso
      */
     public function search($params)
     {
-        $query = Egreso::find();
+        $query = DetalleIngreso::find();
 
         // add conditions that should always apply here
 
@@ -60,19 +60,18 @@ class EgresoSearch extends Egreso
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'fecha_egreso' => $this->fecha_egreso,
-            'subtotal' => $this->subtotal,
+            'idIngreso' => $this->idIngreso,
+            'idInventario' => $this->idInventario,
+            'cantidad' => $this->cantidad,
+            'precio' => $this->precio,
             'porc_iva' => $this->porc_iva,
-            'val_iva' => $this->val_iva,
+            'iva' => $this->iva,
             'porc_descuento' => $this->porc_descuento,
-            'val_descuento' => $this->val_descuento,
-            'fecha_creacion' => $this->fecha_creacion,
+            'descuento' => $this->descuento,
+            'total' => $this->total,
         ]);
 
-        $query->andFilterWhere(['ilike', 'creado_por', $this->creado_por])
-            ->andFilterWhere(['ilike', 'observacion', $this->observacion])
-            ->andFilterWhere(['ilike', 'estado', $this->estado])
-            ->andFilterWhere(['ilike', 'obs_estado', $this->obs_estado]);
+        $query->andFilterWhere(['ilike', 'nombreItem', $this->nombreItem]);
 
         return $dataProvider;
     }

@@ -38,6 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //'porc_descuento',
             //'descuento',
             //'total',
+            //'porc_iva',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, DetalleEgreso $model, $key, $index, $column) {

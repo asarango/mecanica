@@ -8,7 +8,6 @@ use Yii;
  * This is the model class for table "egreso".
  *
  * @property int $id
- * @property int $num_egreso
  * @property string $fecha_egreso
  * @property float $subtotal
  * @property float $porc_iva
@@ -18,6 +17,8 @@ use Yii;
  * @property string $creado_por
  * @property string $fecha_creacion
  * @property string|null $observacion
+ * @property string $estado
+ * @property string|null $obs_estado
  *
  * @property DetalleEgreso[] $detalleEgresos
  * @property OrdenTrabajoEgreso[] $ordenTrabajoEgresos
@@ -38,12 +39,12 @@ class Egreso extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['num_egreso', 'fecha_egreso', 'subtotal', 'porc_iva', 'val_iva', 'porc_descuento', 'val_descuento', 'creado_por', 'fecha_creacion'], 'required'],
-            [['num_egreso'], 'default', 'value' => null],
-            [['num_egreso'], 'integer'],
+            [['fecha_egreso', 'creado_por', 'fecha_creacion', 'estado'], 'required'],
             [['fecha_egreso', 'fecha_creacion'], 'safe'],
             [['subtotal', 'porc_iva', 'val_iva', 'porc_descuento', 'val_descuento'], 'number'],
             [['creado_por'], 'string', 'max' => 10],
+            [['observacion', 'obs_estado'], 'string', 'max' => 255],
+            [['estado'], 'string', 'max' => 30],
         ];
     }
 
@@ -54,7 +55,6 @@ class Egreso extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'num_egreso' => 'Num Egreso',
             'fecha_egreso' => 'Fecha Egreso',
             'subtotal' => 'Subtotal',
             'porc_iva' => 'Porc Iva',
@@ -64,6 +64,8 @@ class Egreso extends \yii\db\ActiveRecord
             'creado_por' => 'Creado Por',
             'fecha_creacion' => 'Fecha Creacion',
             'observacion' => 'Observacion',
+            'estado' => 'Estado',
+            'obs_estado' => 'Obs Estado',
         ];
     }
 

@@ -39,6 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'porc_descuento',
             'descuento',
             'total',
+            'porc_iva',
         ],
     ]) ?>
 

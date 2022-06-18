@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\EgresoSearch */
+/* @var $model app\models\IngresoSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="egreso-search">
+<div class="ingreso-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -17,7 +17,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'fecha_egreso') ?>
+    <?= $form->field($model, 'fecha_ingreso') ?>
 
     <?= $form->field($model, 'subtotal') ?>
 

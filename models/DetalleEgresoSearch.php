@@ -19,7 +19,7 @@ class DetalleEgresoSearch extends DetalleEgreso
         return [
             [['id', 'idEgreso', 'idInventario'], 'integer'],
             [['nombreItem'], 'safe'],
-            [['cantidad', 'precio', 'iva', 'porc_descuento', 'descuento', 'total'], 'number'],
+            [['cantidad', 'precio', 'iva', 'porc_descuento', 'descuento', 'total', 'porc_iva'], 'number'],
         ];
     }
 
@@ -68,6 +68,7 @@ class DetalleEgresoSearch extends DetalleEgreso
             'porc_descuento' => $this->porc_descuento,
             'descuento' => $this->descuento,
             'total' => $this->total,
+            'porc_iva' => $this->porc_iva,
         ]);
 
         $query->andFilterWhere(['ilike', 'nombreItem', $this->nombreItem]);
