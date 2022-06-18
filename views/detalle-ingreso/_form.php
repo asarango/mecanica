@@ -4,15 +4,15 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\DetalleEgreso */
+/* @var $model app\models\DetalleIngreso */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="detalle-egreso-form">
+<div class="detalle-ingreso-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'idEgreso')->textInput() ?>
+    <?= $form->field($model, 'idIngreso')->textInput() ?>
 
     <?= $form->field($model, 'idInventario')->textInput() ?>
 
@@ -22,6 +22,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'precio')->textInput() ?>
 
+    <?= $form->field($model, 'porc_iva')->textInput() ?>
+
     <?= $form->field($model, 'iva')->textInput() ?>
 
     <?= $form->field($model, 'porc_descuento')->textInput() ?>
@@ -29,8 +31,6 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'descuento')->textInput() ?>
 
     <?= $form->field($model, 'total')->textInput() ?>
-
-    <?= $form->field($model, 'porc_iva')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

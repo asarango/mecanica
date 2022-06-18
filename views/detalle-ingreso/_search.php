@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\DetalleEgresoSearch */
+/* @var $model app\models\DetalleIngresoSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="detalle-egreso-search">
+<div class="detalle-ingreso-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -17,7 +17,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'idEgreso') ?>
+    <?= $form->field($model, 'idIngreso') ?>
 
     <?= $form->field($model, 'idInventario') ?>
 
@@ -27,6 +27,8 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'precio') ?>
 
+    <?php // echo $form->field($model, 'porc_iva') ?>
+
     <?php // echo $form->field($model, 'iva') ?>
 
     <?php // echo $form->field($model, 'porc_descuento') ?>
@@ -34,8 +36,6 @@ use yii\widgets\ActiveForm;
     <?php // echo $form->field($model, 'descuento') ?>
 
     <?php // echo $form->field($model, 'total') ?>
-
-    <?php // echo $form->field($model, 'porc_iva') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

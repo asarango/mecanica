@@ -2,16 +2,16 @@
 
 namespace app\controllers;
 
-use app\models\DetalleEgreso;
-use app\models\DetalleEgresoSearch;
+use app\models\Ingreso;
+use app\models\IngresoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * DetalleEgresoController implements the CRUD actions for DetalleEgreso model.
+ * IngresoController implements the CRUD actions for Ingreso model.
  */
-class DetalleEgresoController extends Controller
+class IngresoController extends Controller
 {
     /**
      * @inheritDoc
@@ -32,13 +32,13 @@ class DetalleEgresoController extends Controller
     }
 
     /**
-     * Lists all DetalleEgreso models.
+     * Lists all Ingreso models.
      *
      * @return string
      */
     public function actionIndex()
     {
-        $searchModel = new DetalleEgresoSearch();
+        $searchModel = new IngresoSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -48,7 +48,7 @@ class DetalleEgresoController extends Controller
     }
 
     /**
-     * Displays a single DetalleEgreso model.
+     * Displays a single Ingreso model.
      * @param int $id ID
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
@@ -61,13 +61,13 @@ class DetalleEgresoController extends Controller
     }
 
     /**
-     * Creates a new DetalleEgreso model.
+     * Creates a new Ingreso model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
-        $model = new DetalleEgreso();
+        $model = new Ingreso();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
@@ -83,7 +83,7 @@ class DetalleEgresoController extends Controller
     }
 
     /**
-     * Updates an existing DetalleEgreso model.
+     * Updates an existing Ingreso model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param int $id ID
      * @return string|\yii\web\Response
@@ -103,7 +103,7 @@ class DetalleEgresoController extends Controller
     }
 
     /**
-     * Deletes an existing DetalleEgreso model.
+     * Deletes an existing Ingreso model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param int $id ID
      * @return \yii\web\Response
@@ -117,15 +117,15 @@ class DetalleEgresoController extends Controller
     }
 
     /**
-     * Finds the DetalleEgreso model based on its primary key value.
+     * Finds the Ingreso model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param int $id ID
-     * @return DetalleEgreso the loaded model
+     * @return Ingreso the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = DetalleEgreso::findOne(['id' => $id])) !== null) {
+        if (($model = Ingreso::findOne(['id' => $id])) !== null) {
             return $model;
         }
 

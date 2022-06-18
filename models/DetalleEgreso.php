@@ -17,6 +17,7 @@ use Yii;
  * @property float $porc_descuento
  * @property float $descuento
  * @property float $total
+ * @property float $porc_iva
  *
  * @property Egreso $idEgreso0
  * @property Inventarios $idInventario0
@@ -37,10 +38,10 @@ class DetalleEgreso extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['idEgreso', 'idInventario', 'nombreItem', 'cantidad', 'precio', 'iva', 'porc_descuento', 'descuento', 'total'], 'required'],
+            [['idEgreso', 'idInventario', 'nombreItem', 'cantidad', 'precio', 'iva', 'porc_descuento', 'descuento', 'total', 'porc_iva'], 'required'],
             [['idEgreso', 'idInventario'], 'default', 'value' => null],
             [['idEgreso', 'idInventario'], 'integer'],
-            [['cantidad', 'precio', 'iva', 'porc_descuento', 'descuento', 'total'], 'number'],
+            [['cantidad', 'precio', 'iva', 'porc_descuento', 'descuento', 'total', 'porc_iva'], 'number'],
             [['nombreItem'], 'string', 'max' => 100],
             [['idEgreso'], 'exist', 'skipOnError' => true, 'targetClass' => Egreso::className(), 'targetAttribute' => ['idEgreso' => 'id']],
             [['idInventario'], 'exist', 'skipOnError' => true, 'targetClass' => Inventarios::className(), 'targetAttribute' => ['idInventario' => 'id']],
@@ -63,6 +64,7 @@ class DetalleEgreso extends \yii\db\ActiveRecord
             'porc_descuento' => 'Porc Descuento',
             'descuento' => 'Descuento',
             'total' => 'Total',
+            'porc_iva' => 'Porc Iva',
         ];
     }
 
