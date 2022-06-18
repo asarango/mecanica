@@ -8,7 +8,6 @@ use Yii;
  * This is the model class for table "ingreso".
  *
  * @property int $id
- * @property int $num_ingreso
  * @property string $fecha_ingreso
  * @property float $subtotal
  * @property float $porc_iva
@@ -17,7 +16,9 @@ use Yii;
  * @property float $val_descuento
  * @property string $creado_por
  * @property string $fecha_creacion
- * @property string|null $observacion
+ * @property string $observacion
+ * @property string $estado
+ * @property string|null $obs_estado
  *
  * @property DetalleIngreso[] $detalleIngresos
  */
@@ -37,13 +38,12 @@ class Ingreso extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['num_ingreso', 'fecha_ingreso', 'subtotal', 'porc_iva', 'val_iva', 'porc_descuento', 'val_descuento', 'creado_por', 'fecha_creacion'], 'required'],
-            [['num_ingreso'], 'default', 'value' => null],
-            [['num_ingreso'], 'integer'],
+            [['fecha_ingreso', 'subtotal', 'porc_iva', 'val_iva', 'porc_descuento', 'val_descuento', 'creado_por', 'fecha_creacion', 'observacion', 'estado'], 'required'],
             [['fecha_ingreso', 'fecha_creacion'], 'safe'],
             [['subtotal', 'porc_iva', 'val_iva', 'porc_descuento', 'val_descuento'], 'number'],
             [['creado_por'], 'string', 'max' => 10],
-            [['observacion'], 'string', 'max' => 255],
+            [['observacion', 'obs_estado'], 'string', 'max' => 255],
+            [['estado'], 'string', 'max' => 30],
         ];
     }
 
@@ -54,7 +54,6 @@ class Ingreso extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'num_ingreso' => 'Num Ingreso',
             'fecha_ingreso' => 'Fecha Ingreso',
             'subtotal' => 'Subtotal',
             'porc_iva' => 'Porc Iva',
@@ -64,6 +63,8 @@ class Ingreso extends \yii\db\ActiveRecord
             'creado_por' => 'Creado Por',
             'fecha_creacion' => 'Fecha Creacion',
             'observacion' => 'Observacion',
+            'estado' => 'Estado',
+            'obs_estado' => 'Obs Estado',
         ];
     }
 

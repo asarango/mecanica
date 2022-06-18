@@ -6,18 +6,18 @@ use yii\grid\ActionColumn;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\EgresoSearch */
+/* @var $searchModel app\models\DetalleIngresoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Egresos';
+$this->title = 'Detalle Ingresos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="egreso-index">
+<div class="detalle-ingreso-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Egreso', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Detalle Ingreso', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -29,20 +29,19 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'fecha_egreso',
-            'subtotal',
-            'porc_iva',
-            'val_iva',
+            'idIngreso',
+            'idInventario',
+            'nombreItem',
+            'cantidad',
+            //'precio',
+            //'porc_iva',
+            //'iva',
             //'porc_descuento',
-            //'val_descuento',
-            //'creado_por',
-            //'fecha_creacion',
-            //'observacion',
-            //'estado',
-            //'obs_estado',
+            //'descuento',
+            //'total',
             [
                 'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, Egreso $model, $key, $index, $column) {
+                'urlCreator' => function ($action, DetalleIngreso $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
                  }
             ],

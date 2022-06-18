@@ -4,14 +4,14 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Egreso */
+/* @var $model app\models\Ingreso */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Egresos', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Ingresos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="egreso-view">
+<div class="ingreso-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'fecha_egreso',
+            'fecha_ingreso',
             'subtotal',
             'porc_iva',
             'val_iva',

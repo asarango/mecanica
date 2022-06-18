@@ -4,12 +4,12 @@ namespace app\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Egreso;
+use app\models\Ingreso;
 
 /**
- * EgresoSearch represents the model behind the search form of `app\models\Egreso`.
+ * IngresoSearch represents the model behind the search form of `app\models\Ingreso`.
  */
-class EgresoSearch extends Egreso
+class IngresoSearch extends Ingreso
 {
     /**
      * {@inheritdoc}
@@ -18,7 +18,7 @@ class EgresoSearch extends Egreso
     {
         return [
             [['id'], 'integer'],
-            [['fecha_egreso', 'creado_por', 'fecha_creacion', 'observacion', 'estado', 'obs_estado'], 'safe'],
+            [['fecha_ingreso', 'creado_por', 'fecha_creacion', 'observacion', 'estado', 'obs_estado'], 'safe'],
             [['subtotal', 'porc_iva', 'val_iva', 'porc_descuento', 'val_descuento'], 'number'],
         ];
     }
@@ -41,7 +41,7 @@ class EgresoSearch extends Egreso
      */
     public function search($params)
     {
-        $query = Egreso::find();
+        $query = Ingreso::find();
 
         // add conditions that should always apply here
 
@@ -60,7 +60,7 @@ class EgresoSearch extends Egreso
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'fecha_egreso' => $this->fecha_egreso,
+            'fecha_ingreso' => $this->fecha_ingreso,
             'subtotal' => $this->subtotal,
             'porc_iva' => $this->porc_iva,
             'val_iva' => $this->val_iva,

@@ -4,15 +4,15 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Egreso */
+/* @var $model app\models\Ingreso */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="egreso-form">
+<div class="ingreso-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'fecha_egreso')->textInput() ?>
+    <?= $form->field($model, 'fecha_ingreso')->textInput() ?>
 
     <?= $form->field($model, 'subtotal')->textInput() ?>
 
