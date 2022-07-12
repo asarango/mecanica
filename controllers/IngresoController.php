@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\Ingreso;
 use app\models\IngresoSearch;
+use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -78,7 +79,7 @@ class IngresoController extends Controller
         }
 
         return $this->render('create', [
-            'model' => $model,
+            'model' => $model
         ]);
     }
 

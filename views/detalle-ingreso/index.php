@@ -1,5 +1,6 @@
 <?php
 
+use app\models\DetalleIngreso;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
@@ -13,6 +14,9 @@ $this->title = 'Detalle Ingresos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="detalle-ingreso-index">
+
+
+    <a href="#" onclick="ajax()">Click me</a>
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -49,4 +53,34 @@ $this->params['breadcrumbs'][] = $this->title;
     ]); ?>
 
 
+<!-- <input type="text" id="text"  >
+<input type="text" id="mensaje" > -->
+
+<div id="view-ajax"></div>
+
 </div>
+
+<script>
+    function ajax(){
+        var params = {
+            'mesage' : 'Hola Mundo',
+            'entero' : 1000
+        };
+
+        $.ajax({                   
+            url: '<?php echo Url::to(['ajax']) ?>',
+            type: 'POST',
+             data: params,
+             success: function(data) {
+                 console.log(data);
+                //  var resp = JSON.parse(data);
+                //  console.log(resp);
+                //  $("#text").val(resp.message);
+                //  $("#mensaje").val(resp.user);
+
+                $('#view-ajax').html(data);
+
+             }
+         });
+    }
+</script>
