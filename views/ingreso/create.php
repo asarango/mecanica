@@ -9,7 +9,7 @@ $this->title = 'Create Ingreso';
 $this->params['breadcrumbs'][] = ['label' => 'Ingresos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="ingreso-create">
+<div class="ingreso-create card shadow p-3">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

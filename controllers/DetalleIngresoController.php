@@ -4,6 +4,9 @@ namespace app\controllers;
 
 use app\models\DetalleIngreso;
 use app\models\DetalleIngresoSearch;
+use app\models\MenMenu;
+use app\models\User;
+use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -130,5 +133,30 @@ class DetalleIngresoController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    public function actionAjax(){
+        //print_r($_POST);
+        // if(isset(Yii::$app->request->post('message'))){
+        //     $test = "Ajax Worked!";
+        //     // do your query stuff here
+        // }else{
+        //     $test = "Ajax failed";
+        //     // do your query stuff here
+        // }
+    
+        // return Json
+
+        $usuarios = MenMenu::find()->all();
+        
+        $test = array(
+            'message' => 'Aqui estoy',
+            'user' => 'Arturo',
+            'detalle' => $usuarios
+        );
+
+        return $this->renderPartial('_ajax',['usuarios' => $usuarios]);
+        //return \yii\helpers\Json::encode($test);
+    
     }
 }
