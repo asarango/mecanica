@@ -55,12 +55,12 @@ class Egreso extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'fecha_egreso' => 'Fecha Egreso',
+            'fecha_egreso' => 'Fecha',
             'subtotal' => 'Subtotal',
             'porc_iva' => 'Porc Iva',
-            'val_iva' => 'Val Iva',
-            'porc_descuento' => 'Porc Descuento',
-            'val_descuento' => 'Val Descuento',
+            'val_iva' => 'Valor Iva',
+            'porc_descuento' => 'Porc Desc',
+            'val_descuento' => 'Valor Desc',
             'creado_por' => 'Creado Por',
             'fecha_creacion' => 'Fecha Creacion',
             'observacion' => 'Observacion',

@@ -34,7 +34,7 @@ class Inventarios extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['codigo', 'nombre', 'precos', 'preven', 'porc_aut_venta','tiene_iva','id_area'], 'required'],
+            [['codigo', 'nombre', 'precos', 'preven', 'tiene_iva','id_area'], 'required'],
             [['precos', 'preven', 'porc_aut_venta','tiene_iva','id_area'], 'number'],
             [['codigo'], 'string', 'max' => 30],
             [['nombre'], 'string', 'max' => 100],
@@ -57,6 +57,15 @@ class Inventarios extends \yii\db\ActiveRecord
             'id_area' => 'Area',
         ];
     }
+      /** 
+    * Gets query for [[Area]]. 
+    * 
+    * @return \yii\db\ActiveQuery 
+    */ 
+   public function getArea() 
+   { 
+       return $this->hasOne(Area::className(), ['id' => 'id_area']); 
+   }
 
     /**
      * Gets query for [[BodegaInventarios]].

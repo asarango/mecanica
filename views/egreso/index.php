@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
+use app\models\Egreso;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\EgresoSearch */
@@ -33,12 +34,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'subtotal',
             'porc_iva',
             'val_iva',
-            //'porc_descuento',
-            //'val_descuento',
+            'porc_descuento',
+            'val_descuento',
             //'creado_por',
             //'fecha_creacion',
-            //'observacion',
-            //'estado',
+            'observacion',
+            'estado',
             //'obs_estado',
             [
                 'class' => ActionColumn::className(),

@@ -72,8 +72,15 @@ class InventariosController extends Controller
         $arrayTieneIva = [ 0 => 'NO', 1 => 'SI'];  
         $modelAreas = \yii\helpers\ArrayHelper::map(Area::find()->all(), 'id', 'nombre_area');   
 
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
+        if ($this->request->isPost) 
+        {
+            if ($model->load($this->request->post())) 
+            {
+                $precos = $model->precos;
+                $preven = $model->preven;
+                $porcentaje = (1-round(($precos/$preven),2))*100;
+                $model->porc_aut_venta =$porcentaje;
+                $model->save();
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
@@ -100,7 +107,12 @@ class InventariosController extends Controller
         $arrayTieneIva = [ 0 => 'NO', 1 => 'SI'];  
         $modelAreas = \yii\helpers\ArrayHelper::map(Area::find()->all(), 'id', 'nombre_area'); 
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
+        if ($this->request->isPost && $model->load($this->request->post())) {
+            $precos = $model->precos;
+            $preven = $model->preven;
+            $porcentaje = (1 - round(($precos / $preven), 2)) * 100;
+            $model->porc_aut_venta = $porcentaje;
+            $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
         }
 

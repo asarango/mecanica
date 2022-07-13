@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Egreso */
 
-$this->title = 'Create Egreso';
+$this->title = 'Crear Egreso';
 $this->params['breadcrumbs'][] = ['label' => 'Egresos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
