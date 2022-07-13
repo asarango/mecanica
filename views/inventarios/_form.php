@@ -33,15 +33,15 @@ use app\models\Area;
         <div class="col">
                 <?= $form->field($model, 'preven')->textInput() ?>
         </div>
-        <div class="col">
-                <?= $form->field($model, 'porc_aut_venta')->textInput() ?>  
-        </div>
-    </div>
-    <div class="row"> 
         <div class="col-4">              
                 <?= $form->field($model, 'tiene_iva')->dropDownList($arrayTieneIva, ['prompt' => 'Seleccione Uno' ]); ?>  
         </div>
-        <div class="col-8">
+<!--        <div class="col">
+                <?= $form->field($model, 'porc_aut_venta')->textInput() ?>  
+        </div>-->
+    </div>
+    <div class="row">         
+        <div class="col-4">
              <?= $form->field($model, 'id_area')->dropDownList($modelAreas, ['prompt' => 'Seleccione Uno' ]); ?>  
         </div>        
     </div>
@@ -49,7 +49,7 @@ use app\models\Area;
         
         <div class="col">
             <div class="form-group">
-                        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+                        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
             </div>
         </div>
     </div>

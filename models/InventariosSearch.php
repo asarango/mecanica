@@ -17,8 +17,8 @@ class InventariosSearch extends Inventarios
     public function rules()
     {
         return [
-            [['id'], 'integer'],
-            [['codigo', 'nombre'], 'safe'],
+            //[['id'], 'integer'],
+            [['codigo', 'nombre','tiene_iva','id_area'], 'safe'],
             [['precos', 'preven', 'porc_aut_venta'], 'number'],
         ];
     }
